@@ -1,0 +1,14 @@
+
+<h2>{{ collections['Laptops'].title }}</h2>
+<ul>
+    {% for product in collections['Laptops'].products %}
+        <div>
+            <a href="{{ product.url }}">
+                <img src="{{ product.featured_image | image_url: width: 100 }}">
+                <h4>{{ product.title }}</h4>
+                <span>{{ product.price | money }}</span>
+            </a>
+        </div>
+        <li>{{- product.title | link_to: product.url }}</li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,10 @@
+<h1>Cart Page</h1>
+
+{% for item in cart.items %}
+    <div>
+        <img src="{{ item.image | img_url: width: 100 }}" alt="{{ item.image | img_tag }}">
+        <h4>{{ item.title }}</h4>
+        <span>{{ item.price | money }}</span>
+    </div>
+
+{% endfor %}

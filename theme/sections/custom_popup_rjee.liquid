@@ -1,0 +1,112 @@
+{% if section.settings.show_custom_popup_rjee %}
+  <link rel="stylesheet" href="{{ 'custom_popup_maxcdn.css' | asset_url }}" onload="this.media='all'" >
+  <link rel="stylesheet" href="{{ 'custom_popup_rjee.css' | asset_url }}" onload="this.media='all'">
+  <link rel='stylesheet' href='{{ 'custom_popup_animate.css' | asset_url }}' />
+  <link href="{{ 'custom_popup_font_css.css' | asset_url }}" rel="stylesheet">
+  <link href="{{ 'custom_popup_font_css_family.css' | asset_url }}" rel="stylesheet">
+  {% comment %}<p><a href="#" data-toggle="modal" data-target="#demoModal_rjee" class="btn animated fadeIn btn-cta btn-cstm-light">open modal</a></p>{% endcomment %}
+
+  <style>
+    .custom_img_popup_rjee{
+      background-image: url('{{ section.settings.show_custom_popup_image | image_url: width: 1920 }}');
+      border: 0 none;
+      padding: 0px;
+    }
+    .modal .close:hover {
+      position: absolute;
+      z-index: 1;
+      right: 10px!important;
+      top: 10px!important;
+      height: 2.5rem;
+      width: 2.5rem;
+      background: #f8f9fa!important;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      padding: 0;
+      opacity: 0.6;
+    }
+    .modal .close {
+      position: absolute;
+      z-index: 1;
+      right: 10px!important;
+      top: 10px!important;
+      height: 2.5rem;
+      width: 2.5rem;
+      background: #f8f9fa!important;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      padding: 0;
+      opacity: 1;
+    }
+    #demoModal_rjee {
+      background-color: #00000073;
+    }
+  </style>
+
+  <!-- Modal -->
+  <div class="modal fade auto-off" id="demoModal_rjee" tabindex="-1" role="dialog" aria-labelledby="demoModal_rjee" aria-hidden="true">
+    <div class="modal-dialog animated zoomInDown modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="container-fluid">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="row">
+            <img class="col-md-12 m-h-20 bg-img rounded-left custom_img_popup_rjee" alt="">
+            <div class="col-md-12 text-center py-5 px-sm-5 ">
+              <h2>{{ section.settings.show_custom_popup_title | strip_html }}</h2>
+              <p class="text-muted">{{ section.settings.show_custom_popup_description }}</p>
+              <a href="{{ section.settings.show_custom_popup_button_url }}" class="btn btn-cstm-dark btn-block btn-cta">{{ section.settings.show_custom_popup_button_text }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Ends -->
+  <script type='text/javascript' src='{{ 'custom_popup_jquery.js' | asset_url }}'></script>
+  <script type='text/javascript' src='{{ 'custom_popup_popper.js' | asset_url }}'></script>
+  <script type='text/javascript' src='{{ 'custom_popup_bs4.js' | asset_url }}'></script>
+  <script type='text/javascript' src='{{ 'custom_popup_rjee.js' | asset_url }}'></script>
+
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Custom Popup",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_custom_popup_rjee",
+      "label": "Show custom popup",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "show_custom_popup_title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "show_custom_popup_description",
+      "label": "Page description"
+    },
+    {
+      "type": "url",
+      "id": "show_custom_popup_button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "text",
+      "id": "show_custom_popup_button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "show_custom_popup_image",
+      "label": "Page image"
+    }
+  ]
+}
+{% endschema %}
