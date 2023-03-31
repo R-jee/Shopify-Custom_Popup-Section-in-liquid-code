@@ -12,6 +12,3 @@
 - run **Command**  ``` theme configure -s e-com-onlinebazar.myshopify.com -t 1471***** -p shptka_8c54********************* ```
 - ```theme watch --allow-live```
 - folder requirement [preview](https://rjee4631.nimbusweb.me/box/attachment/2qd71h43bdfuel6m/ofq7PyD2HwdmzcJf/preview)
-- 1
-- 
-- 
